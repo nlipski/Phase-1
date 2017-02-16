@@ -1,0 +1,62 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+
+ENTITY testbench IS
+END testbench;
+
+ARCHITECTURE testbench_arch OF testbench IS
+	--initialization and declaration of inputs
+	signal clk_tb : std_logic;
+	signal clr_tb : std_logic;
+	signal rin_tb : std_logic;
+	signal busmuxin_tb : std_logic_vector(31 downto 0);
+	
+	-- initialization and declaration of outputs
+	signal busmuxout_tb :std_logic_vector(31 downto 0);
+	
+	
+component PHASEONE
+	port(
+		Rin: in std_logic;
+		clk : in std_logic;
+		clr: in std_logic;
+		busmuxin: in std_logic_vector(31 downto 0);
+		busmuxout: out std_logic_vector(31 downto 0)
+		);
+end component PHASEONE
+
+BEGIN
+
+	DUT: PHASEONE PORT MAP(
+		clk => clk_tb,
+		clr => clr_tb,
+		Rin => Rin_tb,
+		busmuxin => busmuxin_tb,
+		busmuxout => busmuxout_tb
+	);
+	
+clk_process : process
+	begin
+		clk_tb <= '0';
+		wait for 10 ns;
+		clk_tb <= '1'
+		wait for 10 ns;
+end process clk_process;
+
+sim_proc: process
+		begin	
+			busmuxin_tb <= x"00000000";
+			Rin_tb <= '0';
+			clr_tb <= '0';
+			wait for 7 ns;
+			clr_tb <= '1';
+			wait for 7 ns;
+			clr_tb <= '0';
+			busmuxin_tb <= x"00000001";
+			Rin_tb <= '1';
+			wait;
+end process sim_proc;
+
+end architecture testbench_arch;
+	
