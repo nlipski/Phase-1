@@ -18,15 +18,22 @@ component fullAdder is
 		);
 end component fullAdder;
 
-signal G,P :std_logic_vector (3 downto 0);
+signal G,P,h_sum :std_logic_vector (3 downto 0);
 signal carry: std_logic_vector(3 downto 1);
 
-G <= a or b;
-P <= a xor b; 
-
+G <= a and b;
+P <= a or b; 
+h_sum<= a xor b;
 begin
 	process (G,P,carry) 
 	begin
+		carry(1)<= G(0)or (P(0) and cin);
+		for i in 1 to 2 loop
+			carry(i+1)<= G(i)or (P(i) and carry(i);
+		end loop;
+		cout<= carry(3);
+	end process;
+	sum(0) <= h_sum(3 down 1) xor carry(3 downto 1);
 		
 	
 	
