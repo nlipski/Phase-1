@@ -7,10 +7,10 @@ entity CLAdder4 is
 			sum: out std_logic_vector (3 downto 0);
 			cout: out std_logic;
 			);
-end entity CLAdder16;
+end entity CLAdder4;
 
 
-architecture structural of CLAdder16 is
+architecture structural of CLAdder4 is
 component fullAdder is 
 	port (  cin: in std_logic;
 		in1, in2: in std_logic;
@@ -34,6 +34,6 @@ begin
 		cout<= carry(3);
 	end process;
 	sum(0) <= h_sum(3 down 1) xor carry(3 downto 1);
-		
+end architecture structural;
 	
 	
