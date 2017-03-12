@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+library work;
+
+ENTITY testbench_phase2 IS
+END testbench_phase2;
+
+ARCHITECTURE testbench_arch OF testbench_phase2 IS
+

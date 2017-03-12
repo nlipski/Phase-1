@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="ELEC374">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ELEC374|RAM:b2v_inst3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_ief1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ELEC374|alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component" CBX_FILE_NAME="lpm_divide_n1q.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

@@ -12,9 +12,14 @@ port ( ReadIn: in std_logic;
 end MDMux;
 
 
-architecture behaviour of MDMux is 
-begin	
-		MDMuxOut <= BusMuxOut when ReadIn='0'
-						else Mdatain;
-end behaviour;
-		 
+architecture behavior of MDMux is 
+begin
+process (ReadIn,BusMuxOut,Mdatain)
+	begin 
+		if (ReadIn= '1') then	
+			MDMuxOut <= Mdatain;
+		else 
+			MDMuxOut <= BusMuxOut;
+		end if;
+	end process;
+END behavior;

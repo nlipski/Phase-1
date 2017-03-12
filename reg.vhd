@@ -12,11 +12,11 @@ end entity reg;
 
 architecture behavior of reg is 
 begin
-process (clk,clr)
+process (clk,clr,ren,rin)
 	begin 
-		if clr = '1' then	
+		if (clr= '1') then	
 			rout <= x"00000000";
-		elsif rising_edge(clk) then
+		elsif ( clk='1') then
 			if ren = '1' then
 				rout <= rin;
 			end if;

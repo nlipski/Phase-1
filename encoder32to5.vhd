@@ -33,30 +33,31 @@ end entity encoder32to5;
 architecture behavior of encoder32to5 is
 begin
 
-Sin <= "00001" when R0out = '1' else 
-		 "00010" when R1out = '1' else
-		 "00011" when R2out = '1' else
-		 "00100" when R3out = '1' else
-		 "00101" when R4out = '1' else
-		 "00110" when R5out = '1' else
-		 "00111" when R6out = '1' else
-		 "01000" when R7out = '1' else
-		 "01001" when R8out = '1' else
-		 "01010" when R9out = '1' else
-		 "01011" when R10out = '1' else
-		 "01100" when R11out = '1' else
-		 "01101" when R12out = '1' else
-		 "01110" when R13out = '1' else
-		 "01111" when R14out = '1' else
-		 "10000" when R15out = '1' else
-		 "10001" when HIout = '1' else
-		 "10010" when LOout = '1' else
-		 "10011" when Zhighout = '1' else
-		 "10100" when Zlowout = '1' else
-		 "10101" when PCout = '1' else
-		 "10110" when MDRout = '1' else
-		 "10111" when InPortout = '1' else
-		 "11000" when Cout = '1' else
-		 "11111"; 
-		 
+			
+				Sin <= "00001" when R0out = '1' else 
+						"00010" when R1out = '1' else
+						"00011" when R2out = '1' else
+						"00100" when R3out = '1' else
+						"00101" when R4out = '1' else
+						"00110" when R5out = '1' else
+						"00111" when R6out = '1' else
+						"01000" when R7out = '1' else
+						"01001" when R8out = '1' else
+						"01010" when R9out = '1' else
+						"01011" when R10out = '1' else
+						"01100" when R11out = '1' else
+						"01101" when R12out = '1' else
+						"01110" when R13out = '1' else
+						"01111" when R14out = '1' else
+						"10000" when R15out = '1' else
+						"10001" when HIout = '1' else
+						"10010" when LOout = '1' else
+						"10011" when Zhighout = '1' else
+						"10100" when Zlowout = '1' else
+						"10101" when PCout = '1' else
+						"10110" when MDRout = '1' else
+						"10111" when InPortout = '1' else
+						"11000" when Cout = '1' else
+						"11111";
+
 end behavior;

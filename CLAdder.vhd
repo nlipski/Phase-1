@@ -24,7 +24,7 @@ begin
 	G <= Xin and Yin;
 	P <= Xin or Yin;
 	
-	process (G,P, CarryIn)
+	process (G,P, CarryIn, h_sum, Cin)
 	begin
 	CarryIn(1) <= G(0) or (P(0) and Cin);
 		inst: for i in 1 to 14 loop	

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ELEC374
-Tue Feb 14 20:46:28 2017
+Sun Mar 12 14:30:32 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,7 +10,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis IP Cores Summary
+  6. Source assignments for RAM:b2v_inst3|altsyncram:altsyncram_component|altsyncram_ief1:auto_generated
+  7. Parameter Settings for User Entity Instance: alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component
+  8. Parameter Settings for User Entity Instance: RAM:b2v_inst3|altsyncram:altsyncram_component
+  9. Port Connectivity Checks: "alu:b2v_ALU|bmul32:booth|badd32:a0|fadd:a2"
+ 10. Port Connectivity Checks: "alu:b2v_ALU|bmul32:booth|badd32:a0"
+ 11. Port Connectivity Checks: "alu:b2v_ALU|CLAdder:CLAhigh"
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -36,7 +43,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Feb 14 20:46:28 2017                ;
+; Analysis & Synthesis Status        ; Failed - Sun Mar 12 14:30:32 2017                ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; ELEC374                                          ;
 ; Top-level Entity Name              ; ELEC374                                          ;
@@ -145,7 +152,7 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -153,8 +160,139 @@ applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                       ;
++--------+--------------+---------+--------------+--------------+------------------------------------+------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                    ; IP Include File        ;
++--------+--------------+---------+--------------+--------------+------------------------------------+------------------------+
+; Altera ; LPM_DIVIDE   ; 13.0    ; N/A          ; N/A          ; |ELEC374|alu:b2v_ALU|divider:div32 ; E:/Phase 1/divider.vhd ;
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |ELEC374|RAM:b2v_inst3             ; E:/Phase 1/RAM.vhd     ;
++--------+--------------+---------+--------------+--------------+------------------------------------+------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Source assignments for RAM:b2v_inst3|altsyncram:altsyncram_component|altsyncram_ief1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------+
+; Assignment                      ; Value              ; From ; To                                    ;
++---------------------------------+--------------------+------+---------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                     ;
++---------------------------------+--------------------+------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+--------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                         ;
++------------------------+----------------+--------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Signed Integer                                               ;
+; LPM_WIDTHD             ; 32             ; Signed Integer                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                      ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                      ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                      ;
+; CBXI_PARAMETER         ; lpm_divide_n1q ; Untyped                                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                               ;
++------------------------+----------------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: RAM:b2v_inst3|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------+
+; Parameter Name                     ; Value                ; Type                           ;
++------------------------------------+----------------------+--------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                        ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                 ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                        ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                        ;
+; WIDTH_A                            ; 32                   ; Signed Integer                 ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                 ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                 ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                        ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                        ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                        ;
+; WIDTH_B                            ; 1                    ; Untyped                        ;
+; WIDTHAD_B                          ; 1                    ; Untyped                        ;
+; NUMWORDS_B                         ; 1                    ; Untyped                        ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                        ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                        ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                        ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                        ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                        ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                        ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                        ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                        ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                        ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                 ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                        ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                        ;
+; BYTE_SIZE                          ; 8                    ; Untyped                        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
+; INIT_FILE                          ; UNUSED               ; Untyped                        ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                        ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_ief1      ; Untyped                        ;
++------------------------------------+----------------------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "alu:b2v_ALU|bmul32:booth|badd32:a0|fadd:a2"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "alu:b2v_ALU|bmul32:booth|badd32:a0" ;
++--------+-------+----------+------------------------------------+
+; Port   ; Type  ; Severity ; Details                            ;
++--------+-------+----------+------------------------------------+
+; a[0]   ; Input ; Info     ; Stuck at GND                       ;
+; sum_in ; Input ; Info     ; Stuck at GND                       ;
++--------+-------+----------+------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "alu:b2v_ALU|CLAdder:CLAhigh" ;
++------+-------+----------+-------------------------------+
+; Port ; Type  ; Severity ; Details                       ;
++------+-------+----------+-------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                  ;
++------+-------+----------+-------------------------------+
 
 
 +-------------------------------+
@@ -163,23 +301,38 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Feb 14 20:46:20 2017
+    Info: Processing started: Sun Mar 12 14:30:16 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ELEC374 -c ELEC374
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file elec374.vhd
-    Info (12022): Found design unit 1: ELEC374-bdf_type
-    Info (12023): Found entity 1: ELEC374
-Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
-    Info (12022): Found design unit 1: reg-behavior
-    Info (12023): Found entity 1: reg
-Info (12021): Found 2 design units, including 1 entities, in source file encoder32to5.vhd
-    Info (12022): Found design unit 1: encoder32to5-behavior
-    Info (12023): Found entity 1: encoder32to5
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
     Info (12022): Found design unit 1: testbench-testbench_arch
     Info (12023): Found entity 1: testbench
+Info (12021): Found 2 design units, including 1 entities, in source file encoder32to5.vhd
+    Info (12022): Found design unit 1: encoder32to5-behavior
+    Info (12023): Found entity 1: encoder32to5
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_mux0.vhd
+    Info (12022): Found design unit 1: lpm_mux0-SYN
+    Info (12023): Found entity 1: lpm_mux0
+Info (12021): Found 2 design units, including 1 entities, in source file reg64.vhd
+    Info (12022): Found design unit 1: reg64-behavior
+    Info (12023): Found entity 1: reg64
+Info (12021): Found 2 design units, including 1 entities, in source file reg.vhd
+    Info (12022): Found design unit 1: reg-behavior
+    Info (12023): Found entity 1: reg
+Info (12021): Found 8 design units, including 4 entities, in source file bmul32.vhdl
+    Info (12022): Found design unit 1: badd32-circuits
+    Info (12022): Found design unit 2: bmul32-circuits
+    Info (12022): Found design unit 3: fadd-circuits
+    Info (12022): Found design unit 4: add32-circuits
+    Info (12023): Found entity 1: badd32
+    Info (12023): Found entity 2: add32
+    Info (12023): Found entity 3: bmul32
+    Info (12023): Found entity 4: fadd
+Info (12021): Found 2 design units, including 1 entities, in source file elec374.vhd
+    Info (12022): Found design unit 1: ELEC374-bdf_type
+    Info (12023): Found entity 1: ELEC374
 Info (12021): Found 2 design units, including 1 entities, in source file mdmux.vhd
-    Info (12022): Found design unit 1: MDMux-behaviour
+    Info (12022): Found design unit 1: MDMux-behavior
     Info (12023): Found entity 1: MDMux
 Info (12021): Found 2 design units, including 1 entities, in source file cladder.vhd
     Info (12022): Found design unit 1: CLAdder-behaviour
@@ -187,29 +340,512 @@ Info (12021): Found 2 design units, including 1 entities, in source file cladder
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-behavioral
     Info (12023): Found entity 1: alu
-Error (10482): VHDL error at testbench.vhd(168): object "ren0" is used but not declared File: E:/Phase 1/testbench.vhd Line: 168
-Error (10482): VHDL error at testbench.vhd(169): object "ren1" is used but not declared File: E:/Phase 1/testbench.vhd Line: 169
-Error (10482): VHDL error at testbench.vhd(170): object "ren2" is used but not declared File: E:/Phase 1/testbench.vhd Line: 170
-Error (10482): VHDL error at testbench.vhd(171): object "ren3" is used but not declared File: E:/Phase 1/testbench.vhd Line: 171
-Error (10482): VHDL error at testbench.vhd(172): object "ren4" is used but not declared File: E:/Phase 1/testbench.vhd Line: 172
-Error (10482): VHDL error at testbench.vhd(173): object "ren5" is used but not declared File: E:/Phase 1/testbench.vhd Line: 173
-Error (10482): VHDL error at testbench.vhd(174): object "ren6" is used but not declared File: E:/Phase 1/testbench.vhd Line: 174
-Error (10482): VHDL error at testbench.vhd(175): object "ren7" is used but not declared File: E:/Phase 1/testbench.vhd Line: 175
-Error (10482): VHDL error at testbench.vhd(176): object "ren8" is used but not declared File: E:/Phase 1/testbench.vhd Line: 176
-Error (10482): VHDL error at testbench.vhd(177): object "ren9" is used but not declared File: E:/Phase 1/testbench.vhd Line: 177
-Error (10482): VHDL error at testbench.vhd(178): object "renA" is used but not declared File: E:/Phase 1/testbench.vhd Line: 178
-Error (10482): VHDL error at testbench.vhd(179): object "renB" is used but not declared File: E:/Phase 1/testbench.vhd Line: 179
-Error (10482): VHDL error at testbench.vhd(180): object "renC" is used but not declared File: E:/Phase 1/testbench.vhd Line: 180
-Error (10482): VHDL error at testbench.vhd(181): object "renD" is used but not declared File: E:/Phase 1/testbench.vhd Line: 181
-Error (10482): VHDL error at testbench.vhd(182): object "renE" is used but not declared File: E:/Phase 1/testbench.vhd Line: 182
-Error (10482): VHDL error at testbench.vhd(183): object "renF" is used but not declared File: E:/Phase 1/testbench.vhd Line: 183
-Error (10482): VHDL error at testbench.vhd(184): object "clr" is used but not declared File: E:/Phase 1/testbench.vhd Line: 184
-Error (10482): VHDL error at testbench.vhd(185): object "clk" is used but not declared File: E:/Phase 1/testbench.vhd Line: 185
-Error (10482): VHDL error at testbench.vhd(186): object "R0out" is used but not declared File: E:/Phase 1/testbench.vhd Line: 186
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 19 errors, 0 warnings
-    Error: Peak virtual memory: 513 megabytes
-    Error: Processing ended: Tue Feb 14 20:46:28 2017
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file good_mux.vhd
+    Info (12022): Found design unit 1: good_mux-behavioral
+    Info (12023): Found entity 1: good_mux
+Info (12021): Found 2 design units, including 1 entities, in source file divider.vhd
+    Info (12022): Found design unit 1: divider-SYN
+    Info (12023): Found entity 1: divider
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: ram-SYN
+    Info (12023): Found entity 1: RAM
+Info (12021): Found 2 design units, including 1 entities, in source file reg9.vhd
+    Info (12022): Found design unit 1: reg9-behavior
+    Info (12023): Found entity 1: reg9
+Info (12021): Found 2 design units, including 1 entities, in source file selenclogic.vhd
+    Info (12022): Found design unit 1: SelEncLogic-behavioural
+    Info (12023): Found entity 1: SelEncLogic
+Info (12021): Found 2 design units, including 1 entities, in source file reg0.vhd
+    Info (12022): Found design unit 1: reg0-behavior
+    Info (12023): Found entity 1: reg0
+Info (12021): Found 2 design units, including 1 entities, in source file andbit4.vhd
+    Info (12022): Found design unit 1: andbit4-behavioural
+    Info (12023): Found entity 1: andbit4
+Info (12021): Found 2 design units, including 1 entities, in source file conff.vhd
+    Info (12022): Found design unit 1: ConFF-behaviour
+    Info (12023): Found entity 1: ConFF
+Info (12021): Found 2 design units, including 1 entities, in source file conlogic.vhd
+    Info (12022): Found design unit 1: ConLogic-structural
+    Info (12023): Found entity 1: ConLogic
+Info (12127): Elaborating entity "ELEC374" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(275): used implicit default value for signal "Cout" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(276): used implicit default value for signal "InPortout0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(277): used implicit default value for signal "InPortout1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(278): used implicit default value for signal "InPortout10" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(279): used implicit default value for signal "InPortout11" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(280): used implicit default value for signal "InPortout12" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(281): used implicit default value for signal "InPortout13" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(282): used implicit default value for signal "InPortout14" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(283): used implicit default value for signal "InPortout15" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(284): used implicit default value for signal "InPortout16" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(285): used implicit default value for signal "InPortout17" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(286): used implicit default value for signal "InPortout18" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(287): used implicit default value for signal "InPortout19" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(288): used implicit default value for signal "InPortout2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(289): used implicit default value for signal "InPortout20" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(290): used implicit default value for signal "InPortout21" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(291): used implicit default value for signal "InPortout22" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(292): used implicit default value for signal "InPortout23" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(293): used implicit default value for signal "InPortout24" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(294): used implicit default value for signal "InPortout25" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(295): used implicit default value for signal "InPortout26" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(296): used implicit default value for signal "InPortout27" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(297): used implicit default value for signal "InPortout28" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(298): used implicit default value for signal "InPortout29" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(299): used implicit default value for signal "InPortout3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(300): used implicit default value for signal "InPortout30" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(301): used implicit default value for signal "InPortout31" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(302): used implicit default value for signal "InPortout4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(303): used implicit default value for signal "InPortout5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(304): used implicit default value for signal "InPortout6" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(305): used implicit default value for signal "InPortout7" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(306): used implicit default value for signal "InPortout8" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at ELEC374.vhd(307): used implicit default value for signal "InPortout9" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "alu" for hierarchy "alu:b2v_ALU"
+Warning (10540): VHDL Signal Declaration warning at ALU.vhd(48): used explicit default value for signal "c_in" because signal was never assigned a value
+Warning (10036): Verilog HDL or VHDL warning at ALU.vhd(59): object "reg" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at ALU.vhd(120): signal "enum_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10445): VHDL Subtype or Type Declaration warning at ALU.vhd(124): subtype or type has null range
+Warning (10443): VHDL warning at ALU.vhd(124): ignored choice with illegal range bounds
+Warning (10445): VHDL Subtype or Type Declaration warning at ALU.vhd(125): subtype or type has null range
+Warning (10443): VHDL warning at ALU.vhd(125): ignored choice with illegal range bounds
+Warning (10631): VHDL Process Statement warning at ALU.vhd(117): inferring latch(es) for signal or variable "reg64", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "reg64[0]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[1]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[2]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[3]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[4]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[5]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[6]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[7]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[8]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[9]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[10]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[11]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[12]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[13]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[14]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[15]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[16]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[17]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[18]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[19]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[20]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[21]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[22]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[23]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[24]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[25]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[26]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[27]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[28]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[29]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[30]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[31]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[32]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[33]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[34]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[35]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[36]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[37]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[38]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[39]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[40]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[41]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[42]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[43]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[44]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[45]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[46]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[47]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[48]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[49]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[50]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[51]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[52]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[53]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[54]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[55]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[56]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[57]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[58]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[59]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[60]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[61]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[62]" at ALU.vhd(117)
+Info (10041): Inferred latch for "reg64[63]" at ALU.vhd(117)
+Info (12128): Elaborating entity "CLAdder" for hierarchy "alu:b2v_ALU|CLAdder:CLAhigh"
+Info (12128): Elaborating entity "bmul32" for hierarchy "alu:b2v_ALU|bmul32:booth"
+Warning (10540): VHDL Signal Declaration warning at bmul32.vhdl(74): used explicit default value for signal "zer" because signal was never assigned a value
+Info (12128): Elaborating entity "badd32" for hierarchy "alu:b2v_ALU|bmul32:booth|badd32:a0"
+Warning (10036): Verilog HDL or VHDL warning at bmul32.vhdl(48): object "nc1" assigned a value but never read
+Info (12128): Elaborating entity "add32" for hierarchy "alu:b2v_ALU|bmul32:booth|badd32:a0|add32:a1"
+Info (12128): Elaborating entity "fadd" for hierarchy "alu:b2v_ALU|bmul32:booth|badd32:a0|add32:a1|fadd:a0"
+Info (12128): Elaborating entity "divider" for hierarchy "alu:b2v_ALU|divider:div32"
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component"
+Info (12130): Elaborated megafunction instantiation "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component"
+Info (12133): Instantiated megafunction "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component" with the following parameter:
+    Info (12134): Parameter "lpm_drepresentation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
+    Info (12134): Parameter "lpm_nrepresentation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_DIVIDE"
+    Info (12134): Parameter "lpm_widthd" = "32"
+    Info (12134): Parameter "lpm_widthn" = "32"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_n1q.tdf
+    Info (12023): Found entity 1: lpm_divide_n1q
+Info (12128): Elaborating entity "lpm_divide_n1q" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component|lpm_divide_n1q:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh
+Info (12128): Elaborating entity "sign_div_unsign_9nh" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component|lpm_divide_n1q:auto_generated|sign_div_unsign_9nh:divider"
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_t8f.tdf
+    Info (12023): Found entity 1: alt_u_div_t8f
+Info (12128): Elaborating entity "alt_u_div_t8f" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component|lpm_divide_n1q:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_unc.tdf
+    Info (12023): Found entity 1: add_sub_unc
+Info (12128): Elaborating entity "add_sub_unc" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component|lpm_divide_n1q:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider|add_sub_unc:add_sub_0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_vnc.tdf
+    Info (12023): Found entity 1: add_sub_vnc
+Info (12128): Elaborating entity "add_sub_vnc" for hierarchy "alu:b2v_ALU|divider:div32|lpm_divide:LPM_DIVIDE_component|lpm_divide_n1q:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_t8f:divider|add_sub_vnc:add_sub_1"
+Info (12128): Elaborating entity "ConLogic" for hierarchy "ConLogic:b2v_ConFF"
+Info (12128): Elaborating entity "ConFF" for hierarchy "ConLogic:b2v_ConFF|ConFF:FF1"
+Warning (10631): VHDL Process Statement warning at ConFF.vhd(11): inferring latch(es) for signal or variable "Q", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "Q" at ConFF.vhd(11)
+Info (12128): Elaborating entity "reg" for hierarchy "reg:b2v_H"
+Warning (10631): VHDL Process Statement warning at reg.vhd(15): inferring latch(es) for signal or variable "rout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "rout[0]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[1]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[2]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[3]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[4]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[5]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[6]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[7]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[8]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[9]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[10]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[11]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[12]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[13]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[14]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[15]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[16]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[17]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[18]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[19]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[20]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[21]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[22]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[23]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[24]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[25]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[26]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[27]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[28]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[29]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[30]" at reg.vhd(15)
+Info (10041): Inferred latch for "rout[31]" at reg.vhd(15)
+Info (12128): Elaborating entity "good_mux" for hierarchy "good_mux:b2v_inst"
+Info (12128): Elaborating entity "encoder32to5" for hierarchy "encoder32to5:b2v_inst1"
+Info (12128): Elaborating entity "MDMux" for hierarchy "MDMux:b2v_inst2"
+Info (12128): Elaborating entity "RAM" for hierarchy "RAM:b2v_inst3"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "RAM:b2v_inst3|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "RAM:b2v_inst3|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "RAM:b2v_inst3|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone III"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ief1.tdf
+    Info (12023): Found entity 1: altsyncram_ief1
+Info (12128): Elaborating entity "altsyncram_ief1" for hierarchy "RAM:b2v_inst3|altsyncram:altsyncram_component|altsyncram_ief1:auto_generated"
+Info (12128): Elaborating entity "reg9" for hierarchy "reg9:b2v_MAR"
+Warning (10631): VHDL Process Statement warning at reg9.vhd(15): inferring latch(es) for signal or variable "rout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "rout[0]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[1]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[2]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[3]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[4]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[5]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[6]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[7]" at reg9.vhd(15)
+Info (10041): Inferred latch for "rout[8]" at reg9.vhd(15)
+Info (12128): Elaborating entity "reg0" for hierarchy "reg0:b2v_R0"
+Warning (10631): VHDL Process Statement warning at reg0.vhd(15): inferring latch(es) for signal or variable "rout", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "rout[0]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[1]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[2]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[3]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[4]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[5]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[6]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[7]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[8]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[9]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[10]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[11]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[12]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[13]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[14]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[15]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[16]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[17]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[18]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[19]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[20]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[21]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[22]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[23]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[24]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[25]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[26]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[27]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[28]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[29]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[30]" at reg0.vhd(15)
+Info (10041): Inferred latch for "rout[31]" at reg0.vhd(15)
+Info (12128): Elaborating entity "reg64" for hierarchy "reg64:b2v_regz"
+Warning (10631): VHDL Process Statement warning at reg64.vhd(15): inferring latch(es) for signal or variable "rh", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at reg64.vhd(15): inferring latch(es) for signal or variable "rlow", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "rlow[0]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[1]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[2]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[3]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[4]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[5]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[6]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[7]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[8]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[9]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[10]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[11]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[12]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[13]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[14]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[15]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[16]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[17]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[18]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[19]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[20]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[21]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[22]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[23]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[24]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[25]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[26]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[27]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[28]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[29]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[30]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rlow[31]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[0]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[1]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[2]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[3]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[4]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[5]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[6]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[7]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[8]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[9]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[10]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[11]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[12]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[13]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[14]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[15]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[16]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[17]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[18]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[19]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[20]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[21]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[22]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[23]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[24]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[25]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[26]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[27]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[28]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[29]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[30]" at reg64.vhd(15)
+Info (10041): Inferred latch for "rh[31]" at reg64.vhd(15)
+Info (12128): Elaborating entity "SelEncLogic" for hierarchy "SelEncLogic:b2v_SelectEncoder"
+Info (12128): Elaborating entity "andbit4" for hierarchy "SelEncLogic:b2v_SelectEncoder|andbit4:G1"
+Error (12014): Net "busmuxout[31]", which fans out to "reg:b2v_RY|rin[31]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[31]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[31]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[31]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[31]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[30]", which fans out to "reg:b2v_RY|rin[30]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[30]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[30]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[30]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[30]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[29]", which fans out to "reg:b2v_RY|rin[29]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[29]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[29]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[29]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[29]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[28]", which fans out to "reg:b2v_RY|rin[28]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[28]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[28]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[28]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[28]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[27]", which fans out to "reg:b2v_RY|rin[27]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[27]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[27]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[27]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[27]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[26]", which fans out to "reg:b2v_RY|rin[26]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[26]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[26]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[26]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[26]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[25]", which fans out to "reg:b2v_RY|rin[25]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[25]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[25]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[25]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[25]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[24]", which fans out to "reg:b2v_RY|rin[24]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[24]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[24]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[24]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[24]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[23]", which fans out to "reg:b2v_RY|rin[23]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[23]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[23]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[23]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[23]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[22]", which fans out to "reg:b2v_RY|rin[22]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[22]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[22]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[22]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[22]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[21]", which fans out to "reg:b2v_RY|rin[21]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[21]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[21]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[21]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[21]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[20]", which fans out to "reg:b2v_RY|rin[20]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[20]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[20]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[20]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[20]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[19]", which fans out to "reg:b2v_RY|rin[19]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[19]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[19]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[19]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[19]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[18]", which fans out to "reg:b2v_RY|rin[18]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[18]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[18]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[18]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[18]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[17]", which fans out to "reg:b2v_RY|rin[17]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[17]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[17]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[17]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[17]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[16]", which fans out to "reg:b2v_RY|rin[16]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[16]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[16]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[16]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[16]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[15]", which fans out to "reg:b2v_RY|rin[15]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[15]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[15]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[15]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[15]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[14]", which fans out to "reg:b2v_RY|rin[14]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[14]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[14]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[14]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[14]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[13]", which fans out to "reg:b2v_RY|rin[13]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[13]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[13]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[13]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[13]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[12]", which fans out to "reg:b2v_RY|rin[12]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[12]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[12]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[12]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[12]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[11]", which fans out to "reg:b2v_RY|rin[11]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[11]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[11]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[11]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[11]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[10]", which fans out to "reg:b2v_RY|rin[10]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[10]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[10]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[10]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[10]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[9]", which fans out to "reg:b2v_RY|rin[9]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[9]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[9]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[9]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[9]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[8]", which fans out to "reg:b2v_RY|rin[8]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[8]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[8]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[8]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[8]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[7]", which fans out to "reg:b2v_RY|rin[7]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[7]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[7]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[7]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[7]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[6]", which fans out to "reg:b2v_RY|rin[6]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[6]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[6]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[6]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[6]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[5]", which fans out to "reg:b2v_RY|rin[5]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[5]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[5]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[5]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[5]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[4]", which fans out to "reg:b2v_RY|rin[4]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[4]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[4]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[4]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[4]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[3]", which fans out to "reg:b2v_RY|rin[3]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[3]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[3]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[3]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[3]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[2]", which fans out to "reg:b2v_RY|rin[2]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[2]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[2]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[2]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[2]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[1]", which fans out to "reg:b2v_RY|rin[1]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[1]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[1]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[1]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[1]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error (12014): Net "busmuxout[0]", which fans out to "reg:b2v_RY|rin[0]", cannot be assigned more than one value File: E:/Phase 1/ELEC374.vhd Line: 274
+    Error (12015): Net is fed by "reg:b2v_InPort|rout[0]" File: E:/Phase 1/reg.vhd Line: 15
+    Error (12015): Net is fed by "good_mux:b2v_inst|result[0]" File: E:/Phase 1/good_mux.vhd Line: 34
+    Error (12015): Net is fed by "RAM:b2v_inst3|q[0]" File: E:/Phase 1/RAM.vhd Line: 49
+    Error (12015): Net is fed by "SelEncLogic:b2v_SelectEncoder|C_sign_extended[0]" File: E:/Phase 1/SelEncLogic.vhd Line: 8
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 160 errors, 49 warnings
+    Error: Peak virtual memory: 579 megabytes
+    Error: Processing ended: Sun Mar 12 14:30:33 2017
+    Error: Elapsed time: 00:00:17
+    Error: Total CPU time (on all processors): 00:00:03
 
 

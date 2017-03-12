@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity reg is 
 port( clr: in std_logic;
 		clk: in std_logic;
 		ren: in std_logic;

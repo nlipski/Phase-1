@@ -1,62 +1,57 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+library work;
 
-ENTITY testbench IS
-END testbench;
+ENTITY alu_testbench IS
+END alu_testbench;
 
-ARCHITECTURE testbench_arch OF testbench IS
-	--initialization and declaration of inputs
-	signal clk_tb : std_logic;
-	signal clr_tb : std_logic;
-	signal rin_tb : std_logic;
-	signal busmuxin_tb : std_logic_vector(31 downto 0);
-	
-	-- initialization and declaration of outputs
-	signal busmuxout_tb :std_logic_vector(31 downto 0);
-	
-	
-component PHASEONE
-	port(
-		Rin: in std_logic;
-		clk : in std_logic;
-		clr: in std_logic;
-		busmuxin: in std_logic_vector(31 downto 0);
-		busmuxout: out std_logic_vector(31 downto 0)
-		);
-end component PHASEONE
 
-BEGIN
+ARCHITECTURE alu_testbench_arch OF alu_testbench IS
 
-	DUT: PHASEONE PORT MAP(
-		clk => clk_tb,
-		clr => clr_tb,
-		Rin => Rin_tb,
-		busmuxin => busmuxin_tb,
-		busmuxout => busmuxout_tb
+signal sel_tb: std_logic_vector(4 downto 0);
+signal a_tb: std_logic_vector(31 downto 0);
+signal b_tb: std_logic_vector(31 downto 0);
+signal clk_tb: std_logic;
+signal result_tb: std_LOGIC_VECTOR(63 downto 0);
+
+COMPONENT alu
+	PORT(clk : IN STD_LOGIC;
+		 a : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 b : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 op : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 y : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
 	);
-	
+END COMPONENT alu;
+
+begin
+
+DUT: alu 
+PORT MAP(clk => clk_tb,
+		 a => a_tb,
+		 b => b_tb,
+		 op => sel_tb,
+		 y => result_tb
+);
+
+
+
+init : PROCESS                                               
+-- variable declarations                                     
+BEGIN                                                        
+a_tb <= x"00000003";
+b_tb <= x"00000006";
+sel_tb <= "00001"; 
+WAIT;                                                       
+END PROCESS init; 
+
 clk_process : process
 	begin
-		clk_tb <= '0';
-		wait for 10 ns;
-		clk_tb <= '1'
-		wait for 10 ns;
+			clk_tb<='0','1' after 10 ns;
+			wait for 20 ns;
 end process clk_process;
 
-sim_proc: process
-		begin	
-			busmuxin_tb <= x"00000000";
-			Rin_tb <= '0';
-			clr_tb <= '0';
-			wait for 7 ns;
-			clr_tb <= '1';
-			wait for 7 ns;
-			clr_tb <= '0';
-			busmuxin_tb <= x"00000001";
-			Rin_tb <= '1';
-			wait;
-end process sim_proc;
 
-end architecture testbench_arch;
-	
+                                                                              
+END architecture alu_testbench_arch;

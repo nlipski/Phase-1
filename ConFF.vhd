@@ -1,0 +1,17 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ConFF is 
+port ( D,En, clk : in std_logic;
+		 Q : out std_logic);
+end entity ConFF;
+
+architecture behaviour of ConFF is 
+	begin
+	process(clk, En, D) is 
+	begin
+		if (En = '1' and clk ='1')then 
+			Q<=D ;
+		end if;
+	end process;
+end architecture behaviour;

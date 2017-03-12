@@ -1,0 +1,476 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1
+Eadd32
+Z0 w1488205950
+Z1 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z2 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z3 dE:\Phase 1
+Z4 8E:/Phase 1/bmul32.vhdl
+Z5 FE:/Phase 1/bmul32.vhdl
+l0
+L18
+VdDieL81b[b6QTLdln3Ob41
+Z6 OV;C;10.1d;51
+32
+Z7 !s108 1488251870.967000
+Z8 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/bmul32.vhdl|
+Z9 !s107 E:/Phase 1/bmul32.vhdl|
+Z10 o-work work -2002 -explicit -O0
+Z11 tExplicit 1
+!s100 Q=XDXFf_UR;SAJ1CY6jM50
+!i10b 1
+Acircuits
+Z12 DEx4 work 4 fadd 0 22 zJ63XN[X@hW^b@K]ClQC=2
+R1
+R2
+Z13 DEx4 work 5 add32 0 22 dDieL81b[b6QTLdln3Ob41
+l151
+L149
+VcdL9cVN_CMX3P[o1]50_W3
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 Y:D]8c=B?ekXaN1H2l;eS1
+!i10b 1
+Ealu
+Z14 w1488250900
+Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
+R2
+R3
+Z16 8E:/Phase 1/ALU.vhd
+Z17 FE:/Phase 1/ALU.vhd
+l0
+L5
+VgkAj_Z6e4I8Y;hFUCXh8h1
+R6
+32
+Z18 !s108 1488251870.752000
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/ALU.vhd|
+Z20 !s107 E:/Phase 1/ALU.vhd|
+R10
+R11
+!s100 <lZ0HZ:J466^[TQNJQ`kk3
+!i10b 1
+Abehavioral
+R15
+R1
+R2
+DEx4 work 3 alu 0 22 gkAj_Z6e4I8Y;hFUCXh8h1
+l50
+L15
+VlO`Z[OMfdXA89G^addWn:3
+R6
+32
+R18
+R19
+R20
+R10
+R11
+!s100 13RF16M]HPV:zDlUW;o?O0
+!i10b 1
+Ebadd32
+Z21 w1488205950
+R1
+R2
+R3
+R4
+R5
+l0
+L9
+V;7]PDX2mQ6@nFK<S<`RV[0
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 @EFWB;3Wg;<9HI6S=Ha7o1
+!i10b 1
+Acircuits
+R12
+R13
+R1
+R2
+Z22 DEx4 work 6 badd32 0 22 ;7]PDX2mQ6@nFK<S<`RV[0
+l66
+L42
+V8Md3H@U;O]HLHTb?GWVic3
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 1Di7V1Me5_hPOlf5;]@DM0
+!i10b 1
+Ebmul32
+R21
+R1
+R2
+R3
+R4
+R5
+l0
+L27
+VMmk;YaVk@1SUf82_mmodg0
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 Pj<kP45]b9mQDe8AoXoh;0
+!i10b 1
+Acircuits
+R22
+R1
+R2
+DEx4 work 6 bmul32 0 22 Mmk;YaVk@1SUf82_mmodg0
+l101
+L95
+V4<ZlhgkYd[`nde@YJHKdK1
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 c7ceCkPOj3G0Cd??jTi`K3
+!i10b 1
+Ecladder
+Z23 w1488223340
+R1
+R2
+R3
+Z24 8E:/Phase 1/CLAdder.vhd
+Z25 FE:/Phase 1/CLAdder.vhd
+l0
+L5
+VmVM;zeVXR<lYGEZCSU=KF1
+R6
+32
+Z26 !s108 1488251872.314000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/CLAdder.vhd|
+Z28 !s107 E:/Phase 1/CLAdder.vhd|
+R10
+R11
+!s100 Mz_O5Km`3UG?=XJ8ASf@m2
+!i10b 1
+Abehaviour
+R1
+R2
+DEx4 work 7 cladder 0 22 mVM;zeVXR<lYGEZCSU=KF1
+l22
+L15
+V7kP@^Q^IemHMg>L]WNN@F1
+R6
+32
+R26
+R27
+R28
+R10
+R11
+!s100 f?9nZYGAQQ7:?@0JiB@6N2
+!i10b 1
+Eelec374
+Z29 w1488245020
+R1
+R2
+R3
+Z30 8E:/Phase 1/ELEC374.vhd
+Z31 FE:/Phase 1/ELEC374.vhd
+l0
+L24
+Vb7QEi]G^?_b3EMJeZVA@82
+R6
+32
+Z32 !s108 1488251872.526000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/ELEC374.vhd|
+Z34 !s107 E:/Phase 1/ELEC374.vhd|
+R10
+R11
+!s100 5M^SzFcXL2Y3MaTK9MITM0
+!i10b 1
+Abdf_type
+R1
+R2
+DEx4 work 7 elec374 0 22 b7QEi]G^?_b3EMJeZVA@82
+l220
+L108
+V^b4QGm@kMRPL^0K1l]`dd3
+R6
+32
+R32
+R33
+R34
+R10
+R11
+!s100 gD5?k<:C>l6LhHb?e@>CM1
+!i10b 1
+Eencoder32to5
+Z35 w1486513088
+R1
+R2
+R3
+Z36 8E:/Phase 1/encoder32to5.vhd
+Z37 FE:/Phase 1/encoder32to5.vhd
+l0
+L4
+V@??JhjUnh:Z2kQ]C`W<Vl1
+R6
+32
+Z38 !s108 1488251872.873000
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/encoder32to5.vhd|
+Z40 !s107 E:/Phase 1/encoder32to5.vhd|
+R10
+R11
+!s100 fcQk@blV?S2f31PU_B6E[0
+!i10b 1
+Abehavior
+R1
+R2
+DEx4 work 12 encoder32to5 0 22 @??JhjUnh:Z2kQ]C`W<Vl1
+l34
+L33
+VDhFEhSLY`FDmJYaG6Vn5=2
+R6
+32
+R38
+R39
+R40
+R10
+R11
+!s100 1bohk7dD4bERMTAnaKdd>0
+!i10b 1
+Efadd
+R21
+R1
+R2
+R3
+R4
+R5
+l0
+L34
+VzJ63XN[X@hW^b@K]ClQC=2
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 g=`CNOYTlZ>Z63VD3f_;=1
+!i10b 1
+Acircuits
+R1
+R2
+R12
+l141
+L140
+V[`lRZXEhFLC1A]aa5ze5n0
+R6
+32
+R7
+R8
+R9
+R10
+R11
+!s100 82NP:[Y^:b;dTh?O9QF>S3
+!i10b 1
+Elpm_mux0
+Z41 w1486510972
+Z42 DPx3 lpm 14 lpm_components 0 22 aHRA3clF>2DcWDhgFTAbM3
+R1
+R2
+R3
+Z43 8E:/Phase 1/lpm_mux0.vhd
+Z44 FE:/Phase 1/lpm_mux0.vhd
+l0
+L42
+V7L=az_nEdCKBD8Ml6ba`X3
+R6
+32
+Z45 !s108 1488251873.134000
+Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/lpm_mux0.vhd|
+Z47 !s107 E:/Phase 1/lpm_mux0.vhd|
+R10
+R11
+!s100 ANLiooAbKzT2]UjL5cHA00
+!i10b 1
+Asyn
+R42
+R1
+R2
+DEx4 work 8 lpm_mux0 0 22 7L=az_nEdCKBD8Ml6ba`X3
+l122
+L83
+VOgAP<YQ>BDAS=JN`fGUSW3
+R6
+32
+R45
+R46
+R47
+R10
+R11
+!s100 [bPg[KVJQgJd38OglGfmR0
+!i10b 1
+Emdmux
+Z48 w1486833456
+Z49 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z50 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R1
+R2
+R3
+Z51 8E:/Phase 1/MDMux.vhd
+Z52 FE:/Phase 1/MDMux.vhd
+l0
+L6
+V2Cl@IfF748Gd6bb`6B;3:3
+R6
+32
+Z53 !s108 1488251879.056000
+Z54 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/MDMux.vhd|
+Z55 !s107 E:/Phase 1/MDMux.vhd|
+R10
+R11
+!s100 NSMQ=Wjg25Jg9K?Y23o<U1
+!i10b 1
+Abehaviour
+R49
+R50
+R1
+R2
+DEx4 work 5 mdmux 0 22 2Cl@IfF748Gd6bb`6B;3:3
+l16
+L15
+VGb?ed3G@C8V`8;O5IRPn11
+R6
+32
+R53
+R54
+R55
+R10
+R11
+!s100 DG:L^25ANHefL9;j58QkF3
+!i10b 1
+Ereg
+Z56 w1486512590
+R1
+R2
+R3
+Z57 8E:/Phase 1/reg.vhd
+Z58 FE:/Phase 1/reg.vhd
+l0
+L4
+VGl22OnF@Q:G:Ol?Qao4RT0
+R6
+32
+Z59 !s108 1488251879.289000
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/reg.vhd|
+Z61 !s107 E:/Phase 1/reg.vhd|
+R10
+R11
+!s100 fzbljONhaFNOgEhH<oVZ60
+!i10b 1
+Abehavior
+R1
+R2
+DEx4 work 3 reg 0 22 Gl22OnF@Q:G:Ol?Qao4RT0
+l14
+L13
+V]eP3e`PVhb<ENRFN?:BB=0
+R6
+32
+R59
+R60
+R61
+R10
+R11
+!s100 6]OXzYb9^iRJGWeKi>P0`0
+!i10b 1
+Ereg64
+Z62 w1488230776
+R1
+R2
+R3
+Z63 8E:/Phase 1/reg64.vhd
+Z64 FE:/Phase 1/reg64.vhd
+l0
+L4
+VQeGN;jl:PeB[fIR;RPKjO2
+R6
+32
+Z65 !s108 1488251879.506000
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/reg64.vhd|
+Z67 !s107 E:/Phase 1/reg64.vhd|
+R10
+R11
+!s100 cR:3kM:loh@;dSzg@JF@N2
+!i10b 1
+Abehavior
+R1
+R2
+DEx4 work 5 reg64 0 22 QeGN;jl:PeB[fIR;RPKjO2
+l14
+L13
+V5zFag_LmSmG55<HQmFic02
+!s100 bf:e;aQz@1fKLI:KJ?ZJ@0
+R6
+32
+R65
+R66
+R67
+R10
+R11
+!i10b 1
+Etestbench
+Z68 w1488251856
+R50
+R49
+R1
+R2
+R3
+Z69 8E:/Phase 1/testbench.vhd
+Z70 FE:/Phase 1/testbench.vhd
+l0
+L5
+V8G9PFSbDDdhzL?Jj[MJ3d3
+!s100 X:bIJnmjDdfbIXSN^HWQT2
+R6
+32
+!i10b 1
+Z71 !s108 1488251880.434000
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|E:/Phase 1/testbench.vhd|
+Z73 !s107 E:/Phase 1/testbench.vhd|
+R10
+R11
+Atestbench_arch
+R50
+R49
+R1
+R2
+Z74 DEx4 work 9 testbench 0 22 8G9PFSbDDdhzL?Jj[MJ3d3
+l177
+L8
+Z75 Ve5zO<ObzIhUi51[WIO:e42
+Z76 !s100 7^PK[4ZUILR28hAdFScg[0
+R6
+32
+!i10b 1
+R71
+R72
+R73
+R10
+R11

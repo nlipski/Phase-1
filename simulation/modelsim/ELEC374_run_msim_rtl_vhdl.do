@@ -1,0 +1,26 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {E:/Phase 1/encoder32to5.vhd}
+vcom -93 -work work {E:/Phase 1/reg64.vhd}
+vcom -93 -work work {E:/Phase 1/reg.vhd}
+vcom -93 -work work {E:/Phase 1/bmul32.vhdl}
+vcom -93 -work work {E:/Phase 1/ELEC374.vhd}
+vcom -93 -work work {E:/Phase 1/MDMux.vhd}
+vcom -93 -work work {E:/Phase 1/CLAdder.vhd}
+vcom -93 -work work {E:/Phase 1/ALU.vhd}
+vcom -93 -work work {E:/Phase 1/good_mux.vhd}
+vcom -93 -work work {E:/Phase 1/divider.vhd}
+
+vcom -93 -work work {E:/Phase 1/testbench.vhd}
+
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs="+acc"  testbench
+
+add wave *
+view structure
+view signals
+run 1500 ns

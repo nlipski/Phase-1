@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus II 64-Bit"
 -- VERSION		"Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version"
--- CREATED		"Tue Feb 14 20:14:54 2017"
+-- CREATED		"Sun Mar 12 13:24:07 2017"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -63,22 +63,35 @@ ENTITY ELEC374 IS
 		InPortout :  IN  STD_LOGIC;
 		HIin :  IN  STD_LOGIC;
 		PCin :  IN  STD_LOGIC;
-		Zin :  IN  STD_LOGIC;
-		Zhighin :  IN  STD_LOGIC;
 		LOin :  IN  STD_LOGIC;
-		Read :  IN  STD_LOGIC;
 		MDRin :  IN  STD_LOGIC;
 		HIoutEn :  IN  STD_LOGIC;
 		LOoutEn :  IN  STD_LOGIC;
 		PCoutEn :  IN  STD_LOGIC;
 		MDRoutEn :  IN  STD_LOGIC;
 		CoutEn :  IN  STD_LOGIC;
-		busmuxout :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		reny :  IN  STD_LOGIC;
+		renz :  IN  STD_LOGIC;
+		ReadIn :  IN  STD_LOGIC;
+		WriteEn :  IN  STD_LOGIC;
+		MARin :  IN  STD_LOGIC;
+		IRen :  IN  STD_LOGIC;
+		CONin :  IN  STD_LOGIC;
+		OUTen :  IN  STD_LOGIC;
+		Strobe :  IN  STD_LOGIC;
+		Gra :  IN  STD_LOGIC;
+		Grb :  IN  STD_LOGIC;
+		Grc :  IN  STD_LOGIC;
+		SelEncin :  IN  STD_LOGIC;
+		SelEncout :  IN  STD_LOGIC;
+		BAout :  IN  STD_LOGIC;
 		Empty :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		HIout :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		InPortIn :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		LOout :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		Mdatain :  IN  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		MDRout :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		operation :  IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
 		PCout :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		rout0 :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		rout1 :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -96,14 +109,48 @@ ENTITY ELEC374 IS
 		routd :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		route :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		routf :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		routy :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
 		Zhigh :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
-		Zlow :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0)
+		Zlow :  INOUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		CONout :  OUT  STD_LOGIC;
+		Address :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0);
+		IRout :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		Out_Port :  OUT  STD_LOGIC_VECTOR(31 DOWNTO 0);
+		RALLin :  OUT  STD_LOGIC_VECTOR(15 DOWNTO 0);
+		RALLout :  OUT  STD_LOGIC_VECTOR(15 DOWNTO 0)
 	);
 END ELEC374;
 
 ARCHITECTURE bdf_type OF ELEC374 IS 
 
-COMPONENT lpm_mux0
+COMPONENT alu
+	PORT(clk : IN STD_LOGIC;
+		 a : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 b : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 op : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		 y : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT conlogic
+	PORT(clk : IN STD_LOGIC;
+		 CONin : IN STD_LOGIC;
+		 BusIn : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 IRin : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 CONout : OUT STD_LOGIC
+	);
+END COMPONENT;
+
+COMPONENT reg
+	PORT(clr : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 ren : IN STD_LOGIC;
+		 rin : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 rout : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT good_mux
 	PORT(data0x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data10x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data11x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -122,13 +169,7 @@ COMPONENT lpm_mux0
 		 data23x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data24x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data25x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data26x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data27x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data28x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data29x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data2x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data30x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-		 data31x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data3x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data4x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
 		 data5x : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
@@ -178,7 +219,25 @@ COMPONENT mdmux
 	);
 END COMPONENT;
 
-COMPONENT reg
+COMPONENT ram
+	PORT(wren : IN STD_LOGIC;
+		 clock : IN STD_LOGIC;
+		 address : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
+		 data : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 q : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT reg9
+	PORT(clr : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 ren : IN STD_LOGIC;
+		 rin : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 rout : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT reg0
 	PORT(clr : IN STD_LOGIC;
 		 clk : IN STD_LOGIC;
 		 ren : IN STD_LOGIC;
@@ -187,47 +246,136 @@ COMPONENT reg
 	);
 END COMPONENT;
 
+COMPONENT reg64
+	PORT(clr : IN STD_LOGIC;
+		 clk : IN STD_LOGIC;
+		 ren : IN STD_LOGIC;
+		 rin : IN STD_LOGIC_VECTOR(63 DOWNTO 0);
+		 rh : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 rlow : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT selenclogic
+	PORT(Gra : IN STD_LOGIC;
+		 Grb : IN STD_LOGIC;
+		 Grc : IN STD_LOGIC;
+		 Rin : IN STD_LOGIC;
+		 Rout : IN STD_LOGIC;
+		 BAout : IN STD_LOGIC;
+		 IRin : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 C_sign_extended : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+		 RAllin : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+		 RAllout : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+	);
+END COMPONENT;
+
+SIGNAL	Address_ALTERA_SYNTHESIZED :  STD_LOGIC_VECTOR(8 DOWNTO 0);
+SIGNAL	busmuxout :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	Cout :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	InPortout0 :  STD_LOGIC;
+SIGNAL	InPortout1 :  STD_LOGIC;
+SIGNAL	InPortout10 :  STD_LOGIC;
+SIGNAL	InPortout11 :  STD_LOGIC;
+SIGNAL	InPortout12 :  STD_LOGIC;
+SIGNAL	InPortout13 :  STD_LOGIC;
+SIGNAL	InPortout14 :  STD_LOGIC;
+SIGNAL	InPortout15 :  STD_LOGIC;
+SIGNAL	InPortout16 :  STD_LOGIC;
+SIGNAL	InPortout17 :  STD_LOGIC;
+SIGNAL	InPortout18 :  STD_LOGIC;
+SIGNAL	InPortout19 :  STD_LOGIC;
+SIGNAL	InPortout2 :  STD_LOGIC;
+SIGNAL	InPortout20 :  STD_LOGIC;
+SIGNAL	InPortout21 :  STD_LOGIC;
+SIGNAL	InPortout22 :  STD_LOGIC;
+SIGNAL	InPortout23 :  STD_LOGIC;
+SIGNAL	InPortout24 :  STD_LOGIC;
+SIGNAL	InPortout25 :  STD_LOGIC;
+SIGNAL	InPortout26 :  STD_LOGIC;
+SIGNAL	InPortout27 :  STD_LOGIC;
+SIGNAL	InPortout28 :  STD_LOGIC;
+SIGNAL	InPortout29 :  STD_LOGIC;
+SIGNAL	InPortout3 :  STD_LOGIC;
+SIGNAL	InPortout30 :  STD_LOGIC;
+SIGNAL	InPortout31 :  STD_LOGIC;
+SIGNAL	InPortout4 :  STD_LOGIC;
+SIGNAL	InPortout5 :  STD_LOGIC;
+SIGNAL	InPortout6 :  STD_LOGIC;
+SIGNAL	InPortout7 :  STD_LOGIC;
+SIGNAL	InPortout8 :  STD_LOGIC;
+SIGNAL	InPortout9 :  STD_LOGIC;
+SIGNAL	IRout_ALTERA_SYNTHESIZED :  STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_0 :  STD_LOGIC_VECTOR(4 DOWNTO 0);
 SIGNAL	SYNTHESIZED_WIRE_1 :  STD_LOGIC_VECTOR(31 DOWNTO 0);
+SIGNAL	SYNTHESIZED_WIRE_2 :  STD_LOGIC_VECTOR(63 DOWNTO 0);
 
+SIGNAL	GDFX_TEMP_SIGNAL_0 :  STD_LOGIC_VECTOR(31 DOWNTO 0);
 
 BEGIN 
 
+GDFX_TEMP_SIGNAL_0 <= (InPortout31 & InPortout30 & InPortout29 & InPortout28 & InPortout27 & InPortout26 & InPortout25 & InPortout24 & InPortout23 & InPortout22 & InPortout21 & InPortout20 & InPortout19 & InPortout18 & InPortout17 & InPortout16 & InPortout15 & InPortout14 & InPortout13 & InPortout12 & InPortout11 & InPortout10 & InPortout9 & InPortout8 & InPortout7 & InPortout6 & InPortout5 & InPortout4 & InPortout3 & InPortout2 & InPortout1 & InPortout0);
 
 
-b2v_inst : lpm_mux0
-PORT MAP(data0x => rout0,
-		 data10x => routa,
-		 data11x => routb,
-		 data12x => routc,
-		 data13x => routd,
-		 data14x => route,
-		 data15x => routf,
-		 data16x => HIout,
-		 data17x => LOout,
-		 data18x => Zhigh,
-		 data19x => Zlow,
-		 data1x => rout1,
-		 data20x => PCout,
-		 data21x => MDRout,
-		 data22x => Empty,
-		 data23x => Empty,
-		 data24x => Empty,
+b2v_ALU : alu
+PORT MAP(clk => clk,
+		 a => routy,
+		 b => busmuxout,
+		 op => operation,
+		 y => SYNTHESIZED_WIRE_2);
+
+
+b2v_ConFF : conlogic
+PORT MAP(clk => clk,
+		 CONin => CONin,
+		 BusIn => busmuxout,
+		 IRin => IRout_ALTERA_SYNTHESIZED,
+		 CONout => CONout);
+
+
+b2v_H : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => HIin,
+		 rin => busmuxout,
+		 rout => HIout);
+
+
+b2v_InPort : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => Strobe,
+		 rin => InPortIn,
+		 rout => busmuxout);
+
+
+b2v_inst : good_mux
+PORT MAP(data0x => Empty,
+		 data10x => rout9,
+		 data11x => routa,
+		 data12x => routb,
+		 data13x => routc,
+		 data14x => routd,
+		 data15x => route,
+		 data16x => routf,
+		 data17x => HIout,
+		 data18x => LOout,
+		 data19x => Zhigh,
+		 data1x => rout0,
+		 data20x => Zlow,
+		 data21x => PCout,
+		 data22x => MDRout,
+		 data23x => GDFX_TEMP_SIGNAL_0,
+		 data24x => Cout,
 		 data25x => Empty,
-		 data26x => Empty,
-		 data27x => Empty,
-		 data28x => Empty,
-		 data29x => Empty,
-		 data2x => rout2,
-		 data30x => Empty,
-		 data31x => Empty,
-		 data3x => rout3,
-		 data4x => rout4,
-		 data5x => rout5,
-		 data6x => rout6,
-		 data7x => rout7,
-		 data8x => rout8,
-		 data9x => rout9,
+		 data2x => rout1,
+		 data3x => rout2,
+		 data4x => rout3,
+		 data5x => rout4,
+		 data6x => rout5,
+		 data7x => rout6,
+		 data8x => rout7,
+		 data9x => rout8,
 		 sel => SYNTHESIZED_WIRE_0,
 		 result => busmuxout);
 
@@ -261,11 +409,42 @@ PORT MAP(R0out => R0out,
 
 
 b2v_inst2 : mdmux
-PORT MAP(ReadIn => Read,
+PORT MAP(ReadIn => ReadIn,
 		 BusMuxOut => busmuxout,
 		 Mdatain => Mdatain,
 		 MDMuxOut => SYNTHESIZED_WIRE_1);
 
+
+b2v_inst3 : ram
+PORT MAP(wren => WriteEn,
+		 clock => clk,
+		 address => Address_ALTERA_SYNTHESIZED,
+		 data => busmuxout,
+		 q => busmuxout);
+
+
+b2v_IR : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => IRen,
+		 rin => busmuxout,
+		 rout => IRout_ALTERA_SYNTHESIZED);
+
+
+b2v_LO : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => LOin,
+		 rin => busmuxout,
+		 rout => LOout);
+
+
+b2v_MAR : reg9
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => MARin,
+		 rin => busmuxout,
+		 rout => Address_ALTERA_SYNTHESIZED);
 
 
 b2v_MDR : reg
@@ -276,7 +455,23 @@ PORT MAP(clr => clr,
 		 rout => MDRout);
 
 
-b2v_R0 : reg
+b2v_OutPort : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => OUTen,
+		 rin => busmuxout,
+		 rout => Out_Port);
+
+
+b2v_PC : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => PCin,
+		 rin => busmuxout,
+		 rout => PCout);
+
+
+b2v_R0 : reg0
 PORT MAP(clr => clr,
 		 clk => clk,
 		 ren => ren0,
@@ -290,46 +485,6 @@ PORT MAP(clr => clr,
 		 ren => ren1,
 		 rin => busmuxout,
 		 rout => rout1);
-
-
-b2v_R11 : reg
-PORT MAP(clr => clr,
-		 clk => clk,
-		 ren => PCin,
-		 rin => busmuxout,
-		 rout => PCout);
-
-
-b2v_R12 : reg
-PORT MAP(clr => clr,
-		 clk => clk,
-		 ren => Zin,
-		 rin => busmuxout,
-		 rout => Zlow);
-
-
-b2v_R13 : reg
-PORT MAP(clr => clr,
-		 clk => clk,
-		 ren => Zhighin,
-		 rin => busmuxout,
-		 rout => Zhigh);
-
-
-b2v_R14 : reg
-PORT MAP(clr => clr,
-		 clk => clk,
-		 ren => LOin,
-		 rin => busmuxout,
-		 rout => LOout);
-
-
-b2v_R15 : reg
-PORT MAP(clr => clr,
-		 clk => clk,
-		 ren => HIin,
-		 rin => busmuxout,
-		 rout => HIout);
 
 
 b2v_R2 : reg
@@ -436,6 +591,15 @@ PORT MAP(clr => clr,
 		 rout => route);
 
 
+b2v_regz : reg64
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => renz,
+		 rin => SYNTHESIZED_WIRE_2,
+		 rh => Zhigh,
+		 rlow => Zlow);
+
+
 b2v_Rf : reg
 PORT MAP(clr => clr,
 		 clk => clk,
@@ -443,5 +607,28 @@ PORT MAP(clr => clr,
 		 rin => busmuxout,
 		 rout => routf);
 
+
+b2v_RY : reg
+PORT MAP(clr => clr,
+		 clk => clk,
+		 ren => reny,
+		 rin => busmuxout,
+		 rout => routy);
+
+
+b2v_SelectEncoder : selenclogic
+PORT MAP(Gra => Gra,
+		 Grb => Grb,
+		 Grc => Grc,
+		 Rin => SelEncin,
+		 Rout => SelEncout,
+		 BAout => BAout,
+		 IRin => IRout_ALTERA_SYNTHESIZED,
+		 C_sign_extended => busmuxout,
+		 RAllin => RALLin,
+		 RAllout => RALLout);
+
+Address <= Address_ALTERA_SYNTHESIZED;
+IRout <= IRout_ALTERA_SYNTHESIZED;
 
 END bdf_type;

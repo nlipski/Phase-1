@@ -1,0 +1,68 @@
+{E:/Phase 1/encoder32to5.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/encoder32to5.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity encoder32to5
+-- Compiling architecture behavior of encoder32to5
+
+} {} {}} {E:/Phase 1/bmul32.vhdl} {1 {vcom -work work -2002 -explicit {E:/Phase 1/bmul32.vhdl}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity badd32
+-- Compiling entity add32
+-- Compiling entity bmul32
+-- Compiling entity fadd
+-- Compiling architecture circuits of badd32
+-- Compiling architecture circuits of bmul32
+-- Loading entity badd32
+-- Compiling architecture circuits of fadd
+-- Compiling architecture circuits of add32
+-- Loading entity fadd
+
+} {} {}} {E:/Phase 1/reg.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/reg.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg
+-- Compiling architecture behavior of reg
+
+} {} {}} {E:/Phase 1/lpm_mux0.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/lpm_mux0.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package LPM_COMPONENTS
+-- Compiling entity lpm_mux0
+-- Compiling architecture SYN of lpm_mux0
+
+} {} {}} {E:/Phase 1/MDMux.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/MDMux.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity MDMux
+-- Compiling architecture behaviour of MDMux
+
+} {} {}} {E:/Phase 1/CLAdder.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/CLAdder.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity CLAdder
+-- Compiling architecture behaviour of CLAdder
+
+} {} {}} {E:/Phase 1/reg64.vhd} {1 {vcom -work work -2002 -explicit {E:/Phase 1/reg64.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity reg64
+-- Compiling architecture behavior of reg64
+
+} {} {}}
